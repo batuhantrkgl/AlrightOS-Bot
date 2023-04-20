@@ -55,7 +55,7 @@ client.on('interactionCreate', async interaction => {
 		await command.execute(interaction, client);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'Komutu Yüklerken Bir Sorun Oluştu.. Lütfen Tekrar Deneyin', ephemeral: true });
+		await interaction.reply({ content: 'Something went wrong while loading command, please try again later.', ephemeral: true });
 	}
 });
 

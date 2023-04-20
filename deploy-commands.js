@@ -18,14 +18,14 @@ const rest = new REST({ version: '9' }).setToken(token);
 
 (async () => {
 	try {
-		console.log('Slash (/) Komutları Yenilenmeye Başlandı.');
+		console.log('Slash (/) Commands started to reloading..');
 
 		await rest.put(
 			Routes.applicationCommands(clientId),
 			{ body: commands },
 		);
 
-		console.log('Başarılı Şekilde Slash (/) Komutları Yenilendi.');
+		console.log('Slash (/) commands reloaded succesfully.');
 	} catch (error) {
 		console.error(error);
 	}

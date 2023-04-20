@@ -3,6 +3,6 @@ module.exports = {
 	once: true,
 	execute(client) {
 
-		console.log(`Discord API'ı ${client.user.tag} Adlı Kişiye Bağlandı...`);
+		console.log(`Discord API' connected to ${client.user.tag}...`);
 	},
 };

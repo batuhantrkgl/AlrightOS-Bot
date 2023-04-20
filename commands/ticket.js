@@ -4,7 +4,7 @@ const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('ticket')
-    .setDescription('Yeni bir destek talebi açar.'),
+    .setDescription('opens new ticket'),
 
   async execute(interaction) {
     const guild = interaction.guild;
@@ -60,18 +60,18 @@ module.exports = {
 
     // ticket mesajı oluşturulur
     let embed = new MessageEmbed()
-      .setTitle('Destek Talebi')
+      .setTitle('Ticket')
       .setColor('BLUE')
-      .setDescription(`Destek talebiniz açıldı. En kısa sürede sizinle iletişime geçeceğiz.`)
+      .setDescription(`Your support request has been opened. We will contact you as soon as possible.`)
       .setTimestamp();
 
     if (args.reason) {
-      embed.addField('Konu', args.reason.value);
+      embed.addField('Subject', args.reason.value);
     }
 
     let closeButton = new MessageButton()
       .setCustomId('close_ticket')
-      .setLabel('Kapat')
+      .setLabel('Close Ticket')
       .setStyle('DANGER');
 
     let buttonRow = new MessageActionRow().addComponents(closeButton);

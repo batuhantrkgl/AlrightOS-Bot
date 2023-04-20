@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
-		.setDescription('Botun Pingini Gösterir.'),
+		.setDescription('Shows Ping of Bot.'),
 	async execute(interaction) {
         let Embed = new Discord.MessageEmbed()
         .setColor('RANDOM')

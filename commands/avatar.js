@@ -5,10 +5,10 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('avatar')
-        .setDescription('Avatarınızı gösterir.')
+        .setDescription('Shows avatar :?')
         .addUserOption(option =>
             option.setName('user')
-            .setDescription('Avatarınızı göstermek istediğiniz kullanıcının adını yazınız.')
+            .setDescription('the user you wanna get avatar.')
             .setRequired(false)),
     async execute(interaction) {
 

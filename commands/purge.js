@@ -3,21 +3,21 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('clear')
-        .setDescription('Belirtilen sayıda mesajı siler')
+        .setDescription('Deletes the specified number of messages.')
         .addIntegerOption(option => 
             option.setName('count')
-                .setDescription('Silinecek mesaj sayısı')
+                .setDescription('the number of messages will be deleted')
                 .setRequired(true))
         .addUserOption(option =>
             option.setName('user')
-                .setDescription('Belirli bir kullanıcının mesajlarını siler')
+                .setDescription('Deletes messages for a specific user')
                 .setRequired(false)),
     async execute(interaction) {
         const count = interaction.options.getInteger('count');
         const user = interaction.options.getUser('user');
 
         if (count < 1 || count > 100) {
-            return await interaction.reply({ content: 'Silinecek mesaj sayısı 1 ile 100 arasında olmalıdır.', ephemeral: true });
+            return await interaction.reply({ content: 'The number of messages to be deleted must be between 1 and 100.', ephemeral: true });
         }
 
         let messages;
@@ -31,6 +31,6 @@ module.exports = {
 
         await interaction.channel.bulkDelete(messages, true);
 
-        return await interaction.reply({ content: `Başarıyla ${messages.size} mesaj silindi.`, ephemeral: true });
+        return await interaction.reply({ content: `Deleted ${messages.size} messages succesfully.`, ephemeral: true });
     },
 };
