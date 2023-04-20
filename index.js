@@ -1,8 +1,6 @@
 const fs = require('fs');
 const { Client, Collection, Intents, MessageButton, MessageActionRow  } = require('discord.js');
 const { token } = require('./config.json');
-require("discord-banner")();
-const { QuickDB } = require('quick.db')
 const { joinVoiceChannel } = require('@discordjs/voice');
 
 // Create a new client instance
