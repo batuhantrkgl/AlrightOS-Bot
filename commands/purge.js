@@ -8,6 +8,8 @@ module.exports = {
         .addIntegerOption(option => 
             option.setName('count')
                 .setDescription('the number of messages will be deleted')
+                .setMaxValue(99)
+                .setMinValue(1)
                 .setRequired(true))
         .addUserOption(option =>
             option.setName('user')
