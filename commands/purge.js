@@ -1,9 +1,10 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { ApplicationCommandManager,ApplicationCommandBuilder } = require("djs-application-commands");
 
 module.exports = {
-    data: new SlashCommandBuilder()
+    data: new ApplicationCommandBuilder()
         .setName('clear')
         .setDescription('Deletes the specified number of messages.')
+        .setPermissions(['MANAGE_MESSAGES'])
         .addIntegerOption(option => 
             option.setName('count')
                 .setDescription('the number of messages will be deleted')

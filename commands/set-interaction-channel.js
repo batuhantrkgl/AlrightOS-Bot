@@ -1,11 +1,12 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { ApplicationCommandManager,ApplicationCommandBuilder } = require("djs-application-commands");
 const Discord = require('discord.js');
 const db = require('orio.db');
 
 module.exports = {
-	data: new SlashCommandBuilder()
+	data: new ApplicationCommandBuilder()
 		.setName('set-interaction-log')
 		.setDescription('sets channel for interaction log.')
+		.setPermissions(['BAN_MEMBERS'])
 		.addChannelOption(option =>
             option.setName('channel')
             .setDescription('the channel you wanna set as interaction-log-channel')
